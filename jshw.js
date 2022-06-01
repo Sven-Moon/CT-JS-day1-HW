@@ -4,18 +4,21 @@ the list and checks that the current name is in the string passed in. The output
 "Matched dog_name" if name is in the string, if no matches are present console.log "No Matches"
 */
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
-let dog_names = ["Max", "HAS", "PuRple", "dog"]
+let dog_names = ["max", "HAS", "PuRple", "dog"]
 
 function findWords(s, n) {
   //Your code goes here
   foundNames = []
   n.forEach(name => {
     if (s.indexOf(name) != -1)
-      console.log('Matched dog_name: ', name);
+      foundNames.push('Matched dog_name: ' + name);
   });
+  if (foundNames.length === 0)
+    return "No matches"
+  return foundNames.join("; ")
 
 }
-findWords(dog_string, dog_names)
+console.log(findWords(dog_string, dog_names))
 
 //Call method here with parameters
 
